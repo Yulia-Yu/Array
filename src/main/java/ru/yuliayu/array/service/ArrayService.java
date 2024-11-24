@@ -1,6 +1,20 @@
-package ru.yuliayu.array.util;
+package ru.yuliayu.array.service;
 
-public class Task {
+public class ArrayService {
+    public static int[] filling (int[] array){
+        for(int i = 0; i < array.length; i++){
+            array[i] = (int) (Math.random() * 18);
+        }
+        return array;
+    }
+
+    public static void write(int[] array){
+        for(int num : array){
+            System.out.print(num + " ");
+        }
+        System.out.print("\n");
+    }
+
     public static int countEvenNum(int[] array) {
         int count = 0;
         for (int num : array) {
@@ -41,21 +55,23 @@ public class Task {
         return sum;
     }
 
-    public static int differenceInAmounts(int[] array){
+    public static int differenceInAmounts(int[] array) {
         int sumEven = 0;
         int sumOdd = 0;
-        for(int i = 0; i < array.length; i+=2) sumEven += array[i];
-        for(int i = 1; i < array.length; i+=2) sumOdd += array[i];
+        for (int i = 0; i < array.length; i += 2) {
+            sumEven += array[i];
+        }
+        for (int i = 1; i < array.length; i += 2) {
+            sumOdd += array[i];
+        }
         return sumEven - sumOdd;
     }
 
-    public static int countZero(int[] array){
+    public static int countZero(int[] array) {
         int count = 0;
         for (int num : array) {
             if (num == 0) count++;
         }
         return count;
     }
-
-
 }
